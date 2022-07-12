@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpdateStudent Details</title>
+</head>
+<body bgcolor="lightblue">
+    <h2 align='center'>Update Student Details</h2>
+    <div align=center>
+        <form action="" method="post" >
+            {% csrf_token %}
+            <label> Enter Updated Name</label>
+            <input type="text" name="name" value="{{stu.name}}"><br>
+            <label> Enter Updated Mobile</label>
+            <input type="tel" name="mobile" value="{{stu.mobile}}"><br>
+            <label> Enter Updated Email</label>
+            <input type="email" name="email" value="{{stu.email}}"><br>
+            <label> Enter Updated Address</label>
+            <textarea name="address" value="" >{{stu.address}}</textarea><br>
+
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

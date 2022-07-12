@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Student</title>
+</head>
+<body bgcolor="yellow">
+    <h2 align='center' >Show Student Detials</h2>
+    <table border="2px" align="center">
+        <ul>
+            <li><h5>User Is : {{user.first_name}} {{user.last_name}}</h5></li>
+            <li><h3>Add Student Bulk: <a href="/add">AddStudent</a></h3></li>
+            <li><h2>Add Student Single: <a href="/addsingle">AddStudent</a></h2></li>
+        </ul>
+        <tr>
+            <th>SR No</th>
+            <th>NAME</th>
+            <th>MOBILE</th>
+            <th>EMAIL</th>
+            <th>ADDRESS</th>
+            <th>Admission Date</th>
+            <th>Updated_Date</th>
+            <th>ACTION</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.mobile}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.admission_date}}</td>
+            <td>{{i.updated_date}}</td>
+            <td>
+                <button> <a href="/update/{{i.id}}/">Update</a> </button>
+                <button> <a href="/delete/{{i.id}}/">Delete</a> </button>
+                
+            </td>
+
+        </tr>
+        
+        {% endfor %}
+
+    </table>
+    <h2 align="center">Delete Multiple Records : 
+        <button><a href="/delete">Delete</a></button>
+    </h2>
+
+    <h2 align="center">LogOut User : 
+        <button><a href="/logout">Logout</a></button>
+    </h2>
+    <h2 align="center">Subject Marks : 
+        <button><a href="/showmark">ShowMark</a></button>
+    </h2>
+</body>
+</html>

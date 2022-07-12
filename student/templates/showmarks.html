@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show marks</title>
+</head>
+<body bgcolor="yellow">
+    <h2 align='center' >Show Student Marks</h2>
+    <table border="2px" align="center">
+        <ul>
+            <li><h5>User Is : {{user.first_name}} {{user.last_name}}</h5></li>
+            <li><h2>Add Student Single: <a href="/addsingle">AddStudent</a></h2></li>
+        </ul>
+        <h2>Add Marks : <a href="/addmarks">AddMarks</a></h2>
+        
+
+        <tr>
+            <th>SR No</th>
+            <th>NAME</th>
+            <th>Physics</th>
+            <th>Chemistry</th>
+            <th>Mathe</th>
+            <th>ACTION</th>
+        </tr>
+        {% for i in mark %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.student}}</td>
+            <td>{{i.physics}}</td>
+            <td>{{i.chemistry}}</td>
+            <td>{{i.math}}</td>
+            
+            <td>
+                <button> <a href="/updatemark/{{i.id}}/">Update</a> </button>
+                
+            </td>
+
+        </tr>
+        
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

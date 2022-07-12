@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body align="center" bgcolor="pink">
+    <li>
+        <a href="{% url 'login' %}">login</a>
+    </li>
+    <h2>Register User Here</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label >Enter UserName :</label>
+        <input type="text" name="username"><br>
+        <label >Enter First Name :</label>
+        <input type="text" name="fname"><br>
+        <label >Enter Last Name :</label>
+        <input type="text" name="lname"><br>
+        <label >Enter Email :</label>
+        <input type="email" name="email"><br>
+        <label >Enter Password :</label>
+        <input type="password" name="password1"><br>
+        <label >Enter Confirm Password :</label>
+        <input type="password" name="password2"><br>
+
+        <input type="submit">
+    </form>
+
+</body>
+</html>
